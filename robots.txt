@@ -1,0 +1,21 @@
+# QK Trader Sacco Robots.txt
+# Last Updated: 2026-04-05
+
+User-agent: *
+# Allow indexing of public marketing pages
+Allow: /index.html
+Allow: /about.html
+Allow: /services.html
+Allow: /membership.html
+Allow: /contact-us.html
+Allow: /profile.html
+
+# Block indexing of the member dashboard and private data
+
+Disallow: /cgi-bin/
+Disallow: /private/
+Disallow: /admin/
+Disallow: /temp/
+
+# Tell bots where to find your new sitemap
+Sitemap: https://qktradersacco.com/sitemap.xml
