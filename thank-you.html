@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for submitting your QK Traders SACCO membership application.">
+    <title>Thank You | QK Traders SACCO</title>
+    <link rel="icon" type="image/png" href="qk logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --plum: #80235e; }
+        * { box-sizing: border-box; }
+        body { display: grid; min-height: 100vh; margin: 0; place-items: center; overflow: hidden; color: #263238; background: linear-gradient(135deg, #f7fffc, #f6f2ff 54%, #fff9ed); font-family: Inter, sans-serif; }
+        .splash { position: fixed; width: 42vmax; height: 42vmax; border-radius: 50%; filter: blur(4px); opacity: .55; pointer-events: none; animation: drift 18s ease-in-out infinite alternate; }
+        .splash-one { top: -21vmax; left: -14vmax; background: radial-gradient(circle, #7dd3fc, transparent 68%); }
+        .splash-two { right: -16vmax; bottom: -24vmax; background: radial-gradient(circle, #f9a8d4, transparent 67%); animation-delay: -4s; }
+        .splash-three { top: 20%; right: 7%; width: 20vmax; height: 20vmax; background: radial-gradient(circle, #fde68a, transparent 70%); animation-delay: -7s; }
+        .thank-you-card { position: relative; z-index: 1; width: min(92%, 640px); padding: clamp(38px, 7vw, 66px); border: 1px solid rgba(255,255,255,.82); border-radius: 32px; text-align: center; background: rgba(255,255,255,.7); box-shadow: 0 24px 70px rgba(74,32,83,.16); backdrop-filter: blur(16px); }
+        .logo { width: 76px; height: 64px; margin-bottom: 24px; object-fit: contain; }
+        .check { display: grid; width: 68px; height: 68px; margin: 0 auto 22px; place-items: center; border: 5px solid #fff; border-radius: 50%; color: #fff; background: linear-gradient(135deg, #10b981, #38bdf8); box-shadow: 0 12px 25px rgba(16,185,129,.28); font-size: 32px; font-weight: 800; }
+        h1 { margin: 0; color: #252039; font-size: clamp(31px, 5vw, 52px); letter-spacing: -1.8px; line-height: 1.06; }
+        p { max-width: 470px; margin: 18px auto 32px; color: #64748b; font-size: 16px; line-height: 1.75; }
+        .home-button { position: relative; display: inline-flex; overflow: hidden; align-items: center; justify-content: center; min-width: 214px; padding: 15px 24px; border-radius: 999px; color: #fff; background: linear-gradient(90deg, #38bdf8, #8b5cf6, #d946ef, #fb7185, #facc15, #38bdf8); background-size: 500% 100%; box-shadow: 0 12px 24px rgba(108,39,114,.25); font-size: 14px; font-weight: 800; text-decoration: none; animation: spectrum 8s ease-in-out infinite; transition: transform .25s ease, box-shadow .25s ease; }
+        .home-button::after { content: ''; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 28%, rgba(255,255,255,.5) 50%, transparent 72%); transform: translateX(-130%); animation: shine 5s ease-in-out infinite; }
+        .home-button:hover, .home-button:focus-visible { transform: translateY(-3px) scale(1.03); box-shadow: 0 17px 30px rgba(108,39,114,.32); }
+        @keyframes spectrum { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+        @keyframes shine { 55%,100% { transform: translateX(130%); } }
+        @keyframes drift { to { transform: translate(5vmax, 3vmax) scale(1.1); } }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+    </style>
+</head>
+<body>
+    <div class="splash splash-one"></div>
+    <div class="splash splash-two"></div>
+    <div class="splash splash-three"></div>
+    <main class="thank-you-card">
+        <img class="logo" src="qk logo.png" alt="QK Traders SACCO">
+        <div class="check" aria-hidden="true">✓</div>
+        <h1>Thank you, <span id="applicant-name">member</span>.</h1>
+        <p>We have received your membership details. Our QK Traders SACCO team will review them and get in touch with you soon.</p>
+        <a class="home-button" href="index.html">Back to home page ↗</a>
+    </main>
+    <script>
+        const applicantName = sessionStorage.getItem('qkApplicantName');
+        if (applicantName) {
+            document.getElementById('applicant-name').textContent = applicantName;
+            sessionStorage.removeItem('qkApplicantName');
+        }
+    </script>
+</body>
+</html>
