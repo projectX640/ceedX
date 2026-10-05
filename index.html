@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Empowering traders with reliable savings, competitive loan products, and expert financial guidance. Join QK Trader Sacco today and grow your wealth.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QK Traders Sacco | Home</title>
+    <link rel="icon" type="image/png" href="qk logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="responsive.css">
+    <style>
+        :root {
+            --brand-purple: #80235e;
+            --hero-gradient: linear-gradient(90deg, #4ade80 0%, #a855f7 100%);
+            --magenta: #9d174d;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .initial-fade {
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        body { font-family: 'Inter', sans-serif; margin: 0; color: #1f2937; line-height: 1.5; }
+
+        /* --- TOP NAVIGATION BAR --- */
+        .top-nav { position: sticky; top: 0; z-index: 1100; background: var(--brand-purple); color: white; padding: 12px 10%; display: flex; justify-content: space-between; align-items: center; font-size: 16px; font-weight: 500; }
+        .top-nav a { color: white; text-decoration: none; font-weight: 600; }
+        .top-nav .top-social { display: flex; align-items: center; gap: 15px; }
+        .top-nav .top-social a { display: flex; align-items: center; justify-content: center; }
+        .top-nav .top-social a img { width: 24px; height: 24px; border-radius: 20px; }
+        .top-nav .top-social a:not(:last-child)::after { content: ''; margin-left: 15px; width: 1px; height: 24px; background: rgba(255,255,255,0.3); }
+        .top-nav-center { position: absolute; left: 50%; transform: translateX(-50%); padding: 7px 25px; color: #fff; background: linear-gradient(90deg, #d946ef, #fb7185); clip-path: polygon(13px 0, calc(100% - 13px) 0, 100% 50%, calc(100% - 13px) 100%, 13px 100%, 0 50%); box-shadow: 0 7px 16px rgba(35,7,28,.25); font-size: 12px; font-weight: 800; letter-spacing: .4px; white-space: nowrap; }
+        .top-nav-right { display: flex; gap: 20px; align-items: center; font-size: 14px; }
+        .top-nav-right a { color: white; text-decoration: none; font-weight: 600; }
+        .top-nav-right span { color: #ddd; }
+
+        /* --- MAIN HEADER --- */
+        .header-main { position: relative; display: flex; justify-content: space-between; align-items: center; padding: 15px 10%; background: white; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); gap: 12px; flex-wrap: wrap; }
+        .logo-box { display: flex; align-items: center; gap: 10px; font-weight: 800; color: var(--brand-purple); text-decoration: none; font-size: 1.2rem; }
+        .nav-menu { display: flex; gap: 18px; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; align-items: center; }
+        .nav-menu { position: relative; }
+        .nav-menu::after { content: ''; position: absolute; right: 0; bottom: -9px; left: 0; height: 2px; background: linear-gradient(90deg, #38bdf8, #8b5cf6, #facc15, #ef4444, #f97316, #38bdf8); background-size: 300% 100%; animation: navSpectrum 5s linear infinite; }
+        @keyframes navSpectrum { to { background-position: 300% 0; } }
+        .nav-menu a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 16px; }
+        .nav-menu a.active { color: var(--brand-teal); }
+        .header-actions { display: flex; align-items: center; gap: 20px; }
+        .btn-get-started { background: #000; color: #fff; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 17px; white-space: nowrap; }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(90deg, rgba(58, 98, 73, 0.886) 0%, rgba(168, 85, 247, 0.8) 100%), url('qk.jpeg') center/cover no-repeat;
+            padding: 80px 10% 180px 10%;
+            color: white;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+        .hero-content {
+            flex: 1;
+        }
+        .hero-cards {
+            flex: 1;
+            max-width: 400px;
+            height: 400px;
+            position: relative;
+            perspective: 1000px;
+        }
+        .cards-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: rotateCards 40s infinite linear;
+        }
+        .card-3d {
+            position: absolute;
+            width: 200px;
+            height: 280px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.622), rgba(0, 0, 0, 0.571));
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            color: white;
+            font-weight: 600;
+            transition: all 0.5s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+        .card-3d:hover {
+            transform: scale(1.1) translateZ(50px);
+            background: linear-gradient(135deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3));
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+        .card-3d:nth-child(1) {
+            transform: rotateY(0deg) translateZ(225px);
+        }
+        .card-3d:nth-child(2) {
+            transform: rotateY(72deg) translateZ(225px);
+        }
+        .card-3d:nth-child(3) {
+            transform: rotateY(144deg) translateZ(225px);
+        }
+        .card-3d:nth-child(4) {
+            transform: rotateY(216deg) translateZ(225px);
+        }
+        .card-3d:nth-child(5) {
+            transform: rotateY(288deg) translateZ(225px);
+        }
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        .card-desc {
+            font-size: 14px;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+        @keyframes rotateCards {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+        .be-money-confident { font-size: 18px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 15px; }
+        .hero h1 { font-size: 90px; font-weight: 800; line-height: 1.1; margin: 0 0 30px 0; }
+        .hero-member-count { display: inline-flex; align-items: center; gap: 12px; margin: -8px 0 28px; padding: 12px 18px; border-left: 3px solid #fff; color: #fff; background: rgba(0,0,0,.16); backdrop-filter: blur(6px); }
+        .hero-member-count strong { font-size: clamp(26px, 3vw, 39px); line-height: 1; letter-spacing: -1.5px; background: linear-gradient(90deg, #38bdf8, #c084fc, #facc15, #fb7185, #38bdf8); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: counterSpectrum 3.5s linear infinite; }
+        @keyframes counterSpectrum { to { background-position: 300% 0; } }
+        .hero-member-count span { max-width: 105px; color: rgba(255,255,255,.88); font-size: 12px; font-weight: 700; line-height: 1.3; text-transform: uppercase; letter-spacing: .7px; }
+        
+        .service-list { list-style: none; padding: 0; margin: 0; }
+        .service-list li { display: flex; align-items: center; gap: 10px; font-size: 21px; margin-bottom: 12px; font-weight: 500; }
+        .check-circle { 
+            width: 18px; height: 18px; background: rgba(255,255,255,0.25); border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; font-size: 20px; 
+        }
+
+        /* Overlapping Cards */
+        .card-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: -120px 10% 0 10%;
+            position: relative;
+            z-index: 10;
+        }
+        .card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            border: 1px solid #f3f4f6;
+        }
+        .card-label { font-size: 15px; font-weight: 800; color: var(--brand-purple); display: block; margin-bottom: 15px; }
+        .card h3 { font-size: 22px; font-weight: 800; margin: 0 0 15px 0; color: #111827; }
+        .card p { font-size: 18px; color: #6b7280; line-height: 1.6; margin-bottom: 25px; }
+        
+        .card-list { list-style: none; padding: 0; margin: 0 0 30px 0; }
+        .card-list li { font-size: 16px; color: #4b5563; margin-bottom: 12px; display: flex; align-items: flex-start; gap: 8px; }
+        .bullet { color: #a855f7; font-weight: bold; }
+
+        .btn-magenta {
+            background: var(--magenta);
+            color: white;
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Bottom Text Section */
+        .at-qk { padding: 100px 10% 60px; font-size: 44px; font-weight: 800; max-width: 800px; }
+        .at-qk span { color: var(--brand-purple); }
+
+
+        :root {
+            --brand-purple: #80235e;
+            --light-bg: #f5f3ff; /* Very subtle lavender/white bg */
+            --magenta: #9d174d;
+        }
+
+        body { font-family: 'Inter', sans-serif; margin: 0; background: #fff; color: #1f2937; }
+
+        /* Vendor Section */
+        .vendor-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 10%;
+            gap: 50px;
+        }
+
+        .vendor-content { flex: 1; }
+        .vendor-content h2 { font-size: 39px; font-weight: 800; margin-bottom: 20px; }
+        .vendor-content h2 span { color: var(--brand-purple); }
+
+        .vendor-list { list-style: none; padding: 0; margin-bottom: 30px; }
+        .vendor-list li { display: flex; align-items: center; gap: 10px; font-size: 16px; margin-bottom: 10px; color: #4b5563; }
+        .check-icon { color: #a855f7; font-weight: bold; }
+
+        .btn-member {
+            background: var(--brand-purple);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .rating { display: inline-flex; align-items: center; gap: 5px; margin-left: 15px; font-size: 13px; font-weight: 600; }
+        .stars { color: #fbbf24; }
+
+        .vendor-image { flex: 1; }
+        .vendor-image img { width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+        /* Manager Quote Card */
+        .quote-card {
+            background: rgb(249, 249, 249);
+            border-radius: 20px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            max-width: 500px;
+            margin-top: 10px;
+            position: relative;
+            z-index: 5;
+            border: 1px solid #f3f4f6;
+        }
+        .quote-circle { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(to bottom right, #a855f7, #ec4899); }
+        .quote-text { font-size: 15px; font-style: italic; color: #4b5563; line-height: 1.5; }
+        .quote-author { font-size: 13px; font-weight: 700; color: #9ca3af; margin-top: 5px; display: block; font-style: normal; }
+
+        /* Loan Slider Section */
+        .loan-slider-section {
+            background-color: #f0f7ff; /* Light blue/grey curved section */
+            padding: 100px 10%;
+            border-radius: 60px;
+            margin: 20px 2%;
+            text-align: center;
+        }
+
+        .slider-header { display: flex; justify-content: space-between; align-items: flex-start; text-align: left; margin-bottom: 50px; }
+        .slider-header h2 { font-size: 40px; font-weight: 800; flex: 1; }
+        .slider-header h2 span { color: var(--brand-purple); }
+        .slider-header p { flex: 1; font-size: 18px; color: #9ca3af; line-height: 1.6; padding-left: 40px; }
+
+        .loan-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        .loan-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        .loan-card h4 { font-size: 18px; font-weight: 800; margin: 0 0 10px 0; }
+        .loan-card p { font-size: 16px; color: #9ca3af; line-height: 1.4; margin: 0; }
+
+        .stats-row {
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        .stat-box { text-align: center; }
+        .stat-box .label { font-size: 19px; font-weight: 800; color: #a855f7; text-transform: uppercase; display: block; }
+        .stat-box .value { font-size: 50px; font-weight: 800; }
+        .stat-box.green .label { color: #10b981; }
+
+:root {
+            --brand-purple: #80235e;
+            --brand-pink: #9d174d;
+            --mint-bg: #e0f2f1;
+            --text-dark: #111827;
+            --text-gray: #6b7280;
+        }
+
+        body { font-family: 'Inter', sans-serif; margin: 0; color: var(--text-dark); }
+
+        /* Top Statement Section */
+        .statement-section {
+            text-align: center;
+            padding: 60px 10%;
+        }
+        .statement-section h2 {
+            font-size: 38px;
+            font-weight: 800;
+            line-height: 1.3;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .statement-section h2 span { color: var(--brand-purple); }
+
+        /* Tabbed Component Section */
+        .financial-needs-container {
+            background-color: var(--mint-bg);
+            border-radius: 50px;
+            margin: 20px 4%;
+            padding: 80px 5%;
+        }
+
+        .tabs-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+        }
+
+        .tabs-header h2 { font-size: 42px; font-weight: 800; margin: 0; }
+        .tabs-header h2 span { color: #2d8a7c; } /* Teal color for 'your financial' */
+
+        .tab-buttons { display: flex; gap: 10px; }
+        .tab-btn {
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .tab-btn.active {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .btn-savings { background: #4db6ac; }
+        .btn-lending { background: #880e4f; }
+
+        /* White Content Card */
+        .tab-content-card {
+            background: white;
+            border-radius: 30px;
+            padding: 50px;
+            max-width: 900px;
+            margin: 0 auto;
+            display: none;
+        }
+        .tab-content-card.active {
+            display: block;
+        }
+
+        .tab-content-card h3 { color: var(--brand-purple); font-size: 20px; font-weight: 800; margin-bottom: 20px; }
+        .tab-content-card p { font-size: 19px; color: var(--text-gray); line-height: 1.6; margin-bottom: 30px; }
+
+        .feature-list { list-style: none; padding: 0; }
+        .feature-list li { margin-bottom: 20px; font-size: 17px; display: flex; align-items: flex-start; gap: 10px; }
+        .feature-list b { color: #111827; }
+        .dot { color: #4db6ac; font-size: 24px; line-height: 1; }
+
+        .btn-learn-more {
+            background: var(--brand-pink);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        /* Why Apply Loan Section Preview */
+        .loan-promo {
+            padding: 100px 10%;
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+        .loan-promo-text { flex: 1; }
+        .loan-promo-text h2 { font-size: 42px; font-weight: 800; }
+        .loan-promo-text span { color: var(--brand-pink); }
+        
+        .promo-item { display: flex; gap: 15px; margin-bottom: 30px; align-items: flex-start; }
+        .promo-icon { background: #e0f2f1; padding: 10px; border-radius: 8px; color: #2d8a7c; font-weight: bold; }
+        .promo-item h4 { margin: 0 0 5px 0; font-size: 19px; font-weight: 800; }
+        .promo-item p { margin: 0; font-size: 17px; color: var(--text-gray); }
+
+        .loan-promo-image { flex: 1; }
+        .loan-promo-image img { width: 100%; border-radius: 20px; }
+
+:root {
+            --brand-purple: #80235e;
+            --brand-teal: #439a86;
+            --lavender-bg: #f0f2ff;
+            --text-dark: #111827;
+            --text-gray: #6b7280;
+            --bullet-blue: #3b82f6;
+        }
+
+        body { font-family: 'Inter', sans-serif; margin: 0; color: var(--text-dark); background-color: #fff; }
+
+        /* Container for the Form Section */
+        .process-section {
+            background-color: var(--lavender-bg);
+            margin: 40px 4%;
+            padding: 80px 8%;
+            border-radius: 50px;
+            display: flex;
+            gap: 60px;
+            align-items: flex-start;
+        }
+
+        .process-info { flex: 1; }
+        .process-info h2 { font-size: 42px; font-weight: 800; margin: 0 0 15px 0; }
+        .process-info h2 span { color: var(--brand-teal); }
+        .process-info p { font-size: 17px; color: var(--text-gray); line-height: 1.6; margin-bottom: 40px; }
+
+        .interest-list { list-style: none; padding: 0; }
+        .interest-list h4 { font-size: 18px; font-weight: 800; margin-bottom: 15px; }
+        .interest-list li { 
+            font-size: 16px; 
+            color: #4b5563; 
+            margin-bottom: 12px; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+        }
+        .interest-list li::before {
+            content: "";
+            width: 4px;
+            height: 4px;
+            background-color: var(--bullet-blue);
+            border-radius: 50%;
+        }
+
+        /* Form Styling */
+        .process-form { flex: 1.2; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
+        
+        input, textarea {
+            width: 100%;
+            padding: 14px 20px;
+            border: 1px solid #fff;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            box-sizing: border-box;
+            background: #fff;
+            color: #111827;
+        }
+        
+        textarea { height: 120px; resize: none; margin-top: 15px; }
+        input::placeholder, textarea::placeholder { color: #9ca3af; }
+
+        .btn-submit {
+            background-color: var(--brand-teal);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Membership Text Section */
+        .membership-promo {
+            padding: 80px 10%;
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+        }
+        
+        .membership-promo .title-box { flex: 1; }
+        .membership-promo h2 { font-size: 42px; font-weight: 800; line-height: 1.1; margin: 0; }
+        .membership-promo h2 .purple { color: var(--brand-purple); }
+
+        .membership-promo .text-box { flex: 1; font-size: 18px; color: var(--text-gray); line-height: 1.8; }
+
+
+
+        :root {
+            --bg-mint: #e6f4f1;
+            --card-bg: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #666666;
+            --accent-green: #2fb38e;
+            --brand-purple: #80235e;
+            --border-radius-lg: 40px;
+            --border-radius-sm: 25px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --- FAQ SECTION --- */
+        .faq-section {
+            padding: 60px 20px;
+        }
+
+        .faq-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background-color: var(--bg-mint);
+            padding: 60px;
+            border-radius: var(--border-radius-lg);
+        }
+
+        .faq-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            gap: 40px;
+        }
+
+        .faq-header h2 {
+            font-size: 4.5rem;
+            margin: 0;
+            line-height: 1.1;
+            flex: 1;
+        }
+
+        .faq-header h2 span { color: var(--accent-green); }
+
+        .faq-header p {
+            flex: 1;
+            color: var(--text-muted);
+            font-size: 1.6rem;
+            line-height: 1.6;
+            max-width: 400px;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        details {
+            background: var(--card-bg);
+            border-radius: var(--border-radius-sm);
+            padding: 10px 25px;
+            margin-bottom: 15px;
+        }
+
+        summary {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        summary::after {
+            content: '›';
+            font-size: 1.5rem;
+            color: var(--accent-green);
+            transition: transform 0.3s;
+        }
+
+        details[open] summary::after { transform: rotate(90deg); content: '∨'; }
+
+        .content {
+            padding-bottom: 20px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* --- FOOTER SECTIONS --- */
+        .site-footer {
+            background-color: #ffffff;
+            padding-top: 40px;
+        }
+
+        /* Top Bar: Logo, Socials, Contact Button */
+        .footer-top-bar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .brand-name {
+            color: var(--brand-purple);
+            font-weight: 800;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .footer-nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .footer-nav a img { width: 22px; height: 22px; border-radius: 50%; object-fit: cover; vertical-align: middle; }
+
+        .nav-separator { color: #ccc; }
+
+        .footer-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn-contact {
+            padding: 10px 25px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            background: white;
+            cursor: pointer;
+        }
+
+        .chat-icon {
+            background-color: #8c7ae6;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Middle: Sitemap Grid */
+        .footer-main-content {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 60px 20px;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 40px;
+            border-top: 1px solid #eee;
+        }
+
+        .footer-column h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .footer-column ul { list-style: none; padding: 0; }
+        .footer-column ul li { margin-bottom: 12px; }
+        .footer-column ul li a { text-decoration: none; color: #666; font-size: 0.95rem; }
+
+        .contact-info { font-weight: 600; display: block; margin-bottom: 10px; }
+        .contact-sub { color: #666; font-size: 0.9rem; display: block; }
+
+        /* Bottom: Copyright */
+        .footer-bottom {
+            max-width: none;
+            margin: 0;
+            padding: 30px 10%;
+            background: linear-gradient(105deg, #5e1845, var(--brand-purple));
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: rgba(255,255,255,.82);
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom > p { margin: 0; padding: 10px 17px; border-radius: 999px; color: #fff; background: linear-gradient(90deg, #d946ef, #fb7185); box-shadow: 0 8px 18px rgba(35,7,28,.25); font-weight: 700; }
+        .footer-bottom-links a { color: #fff; text-decoration: none; margin-left: 20px; font-weight: 600; }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .faq-grid, .faq-header, .footer-top-bar, .footer-bottom {
+                flex-direction: column;
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .footer-main-content { grid-template-columns: repeat(2, 1fr); }
+            .footer-nav { justify-content: center; margin: 20px 0; }
+            .footer-actions { justify-content: center; }
+        }
+
+        @media (max-width: 768px) {
+            .top-nav { flex-direction: column; gap: 10px; text-align: center; padding: 10px 5%; }
+            .top-nav-center { position: static; transform: none; }
+            .top-nav-right { gap: 10px; flex-wrap: wrap; justify-content: center; }
+            .header-main { flex-direction: column; gap: 14px; padding: 15px 5%; }
+            .nav-menu { flex-direction: row; gap: 10px; flex-wrap: wrap; justify-content: center; }
+            .nav-menu li { min-width: 90px; text-align: center; }
+            .btn-get-started { padding: 9px 14px; font-size: 14px; }
+            .vendor-container { flex-direction: column; gap: 40px; }
+            .loan-promo { flex-direction: column; gap: 40px; }
+            .process-section { flex-direction: column; gap: 40px; }
+            .membership-promo { flex-direction: column; gap: 40px; }
+            .tabs-header { flex-direction: column; gap: 30px; text-align: center; }
+            .slider-header { flex-direction: column; gap: 30px; text-align: center; }
+            .loan-grid { grid-template-columns: 1fr; }
+            .faq-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .stats-row { flex-direction: column; gap: 20px; align-items: center; }
+            .card-row { grid-template-columns: 1fr; }
+            .hero { flex-direction: column; text-align: center; }
+            .hero-cards {
+                max-width: 300px;
+                height: 300px;
+                margin: 0 auto;
+                overflow: hidden;
+            }
+            .cards-container {
+                perspective: 800px;
+            }
+            .card-3d {
+                width: 150px;
+                height: 210px;
+            }
+            .card-3d:nth-child(1) {
+                transform: rotateY(0deg) translateZ(150px);
+            }
+            .card-3d:nth-child(2) {
+                transform: rotateY(72deg) translateZ(150px);
+            }
+            .card-3d:nth-child(3) {
+                transform: rotateY(144deg) translateZ(150px);
+            }
+            .card-3d:nth-child(4) {
+                transform: rotateY(216deg) translateZ(150px);
+            }
+            .card-3d:nth-child(5) {
+                transform: rotateY(288deg) translateZ(150px);
+            }
+        }
+
+        .top-bar img{
+            width: 30px;
+            height: 30px;
+            border-radius: 20px;
+            background-color: white;
+            corner-shape: squircle;
+            
+        }
+
+
+        @media  screen and (max-width:780px) {
+            .top-bar {
+                size: 1px;
+                font-weight: 0px;
+
+            }
+            .top-bar img{
+                width: 15px;
+                height: 15px;
+
+            }
+            .logo{
+                font-size: 12px;
+            }
+
+            .nav-links {
+               font-size: 8px;
+            }
+
+            .nav-links a{
+                font-size: 8px;
+            }
+
+            .btn-black{
+                font-size: 9px;
+            }
+
+            .be-money-confident{
+                font-size: 11px;
+            }
+            .hero h1{
+                font-size: 30px;
+            }
+
+            .service-list li{
+                font-size: 13px;
+            }
+
+            .check-circle{
+                font-size: 9px;
+            }
+
+            .card-label{
+                font-size: 12px;
+            }
+
+            .card h3{
+                font-size: 17px;
+            }
+
+            .card p{
+                font-size: 12px;
+            }
+
+             .card-list li{
+                font-size: 11px;
+
+             }
+
+             .btn-magenta{
+                font-size: 12px;
+                padding: 10px;
+                gap: 3px;
+             }
+
+             .btn-black
+            {
+                width: 1cm;
+                height: 1cm;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .top-nav { font-size: 11px; padding: 8px 4%; }
+            .top-nav .top-social a img { width: 20px; height: 20px; }
+            .nav-menu a { font-size: 13px; }
+            .btn-get-started { padding: 8px 12px; font-size: 12px; }
+            .hero { padding: 60px 5% 120px 5%; }
+            .be-money-confident { font-size: 14px; }
+            .hero h1 { font-size: 50px; }
+            .service-list li { font-size: 16px; }
+            .hero-cards {
+                max-width: 250px;
+                height: 250px;
+                overflow: hidden;
+            }
+            .cards-container {
+                perspective: 600px;
+            }
+            .card-3d {
+                width: 100px;
+                height: 140px;
+                padding: 15px;
+            }
+            .card-3d:nth-child(1) {
+                transform: rotateY(0deg) translateZ(120px);
+            }
+            .card-3d:nth-child(2) {
+                transform: rotateY(72deg) translateZ(120px);
+            }
+            .card-3d:nth-child(3) {
+                transform: rotateY(144deg) translateZ(120px);
+            }
+            .card-3d:nth-child(4) {
+                transform: rotateY(216deg) translateZ(120px);
+            }
+            .card-3d:nth-child(5) {
+                transform: rotateY(288deg) translateZ(120px);
+            }
+            .card-icon { font-size: 36px; }
+            .card-title { font-size: 14px; }
+            .card-desc { font-size: 12px; }
+            .card-row { grid-template-columns: 1fr; margin: -80px 5% 0 5%; }
+            .card { padding: 20px; }
+            .card h3 { font-size: 18px; }
+            .card p { font-size: 13px; }
+            .footer-main-content { grid-template-columns: 1fr; }
+            .footer-nav { margin: 15px 0; }
+        }
+
+        /* --- CHAT --- */
+        .chat-widget { position: fixed; bottom: 30px; right: 30px; z-index: 1000; }
+        .chat-options { display: none; flex-direction: column; gap: 10px; margin-bottom: 10px; }
+        .chat-widget.expanded .chat-options { display: flex; }
+        .chat-option { display: flex; align-items: center; gap: 8px; padding: 11px 16px; border: 1px solid rgba(34,197,94,.38); border-radius: 25px; color: #14532d; background: linear-gradient(110deg, #fff 0%, #f0fdf4 48%, #86efac 100%); font-size: 14px; font-weight: 700; text-decoration: none; box-shadow: 0 6px 16px rgba(22,101,52,.18); transition: transform .45s .08s ease, box-shadow .45s .08s ease, filter .45s .08s ease; }
+        .chat-option:hover, .chat-option:focus-visible { transform: translateX(-8px) scale(1.05); box-shadow: 0 12px 24px rgba(22,101,52,.3); filter: saturate(1.2); }
+        .chat-option:active { transform: translateX(-4px) scale(.96); transition-delay: 0s; }
+        .chat-option.whatsapp, .chat-option.call { color: #14532d; background: linear-gradient(110deg, #fff 0%, #f0fdf4 48%, #86efac 100%); }
+        .option-icon { font-size: 16px; }
+        .chat-toggle { width: 60px; height: 60px; background: linear-gradient(135deg, #fff, #86efac); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #166534; font-size: 24px; border: 1px solid rgba(34,197,94,.5); cursor: pointer; box-shadow: 0 10px 20px rgba(22,101,52,.28); animation: chatPulse 2.6s ease-in-out infinite; transition: transform .45s .08s ease, box-shadow .45s .08s ease; }
+        .chat-toggle:hover, .chat-toggle:focus-visible { transform: scale(1.12) rotate(6deg); box-shadow: 0 14px 28px rgba(22,101,52,.4); }
+        @keyframes chatPulse { 50% { box-shadow: 0 10px 20px rgba(22,101,52,.28), 0 0 0 9px rgba(134,239,172,.18); } }
+    </style>
+</head>
+<body>
+
+    <div class="top-nav">
+        <div class="top-social">
+            <a href="https://wa.me/256702801507" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="whatsapp.jpg" alt="WhatsApp"></a>
+            <a href="https://www.facebook.com/quadralkay" target="_blank" rel="noopener" aria-label="Facebook"><img src="facebook.svg" alt="Facebook"></a>
+            <a href="https://www.tiktok.com/@qktraderssacco" target="_blank" rel="noopener" aria-label="TikTok"><img src="tiktok.jpg" alt="TikTok"></a>
+            <a href="https://www.youtube.com/channel/UCuh3HxplZlNXIbYhBjaaCZQ" target="_blank" rel="noopener" aria-label="YouTube"><img src="youtube.jpg" alt="YouTube"></a>
+            <a href="https://x.com/@QkTradersNdeeba" target="_blank" rel="noopener" aria-label="X"><img src="x.jpg" alt="X"></a>
+        </div>
+        <div class="top-nav-center">To Live Better, Walk With Us</div>
+        <div class="top-nav-right">
+            <a href="mailto:info@qktraders.com">✉ Email us</a>
+            <span>|</span>
+            <a href="tel:+256702801507">💬 Live chat</a>
+            <span>|</span>
+            <a href="https://wa.me/256702801507" target="_blank" rel="noopener">📱 WhatsApp</a>
+        </div>
+    </div>
+
+    <header class="header-main">
+        <a href="#" class="logo-box">
+            <img src="qk logo.png" alt="QK Logo" style="width:120px; height:90px; border-radius:20%"> 
+            QK TRADERS SACCO
+        </a>
+        <nav>
+            <ul class="nav-menu">
+               <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html" >Services ▾</a></li>
+                <li><a href="profile.html">Publications</a></li>
+                <li><a href="contact-us.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <span style="cursor: pointer;">🔍</span>
+            <a href="membership.html" class="btn-get-started">Get Started ↗</a>
+        </div>
+    </header>
+
+    <section class="hero initial-fade">
+        <div class="hero-content">
+            <div class="be-money-confident">Be Money Confident</div>
+            <h1>Together, We Grow<br>Stronger.</h1>
+            <div class="hero-member-count" aria-label="8,000K users">
+                <strong id="member-count">1K</strong>
+                <span>users growing together</span>
+            </div>
+            <ul class="service-list">
+                <li><span class="check-circle">✓</span> Personal Loans</li>
+                <li><span class="check-circle">✓</span> Group Loans</li>
+                <li><span class="check-circle">✓</span> Business Loans</li>
+                <li><span class="check-circle">✓</span> School Fees Loans</li>
+                <li><span class="check-circle">✓</span> Fixed Deposits</li>
+                <li><span class="check-circle">✓</span> Savings</li>
+                <li><span class="check-circle">✓</span> Shares</li>
+            </ul>
+        </div>
+        <div class="hero-cards">
+            <div class="cards-container">
+                <div class="card-3d">
+                    <div class="card-icon">💰</div>
+                    <div class="card-title">Savings</div>
+                    <div class="card-desc">Secure your future with competitive interest rates and flexible savings options.</div>
+                </div>
+                <div class="card-3d">
+                    <div class="card-icon">🏦</div>
+                    <div class="card-title">Loans</div>
+                    <div class="card-desc">Access affordable loans for personal, business, and educational needs.</div>
+                </div>
+                <div class="card-3d">
+                    <img src="QK-SACCO.jpg" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;" alt="Investments">
+                </div>
+                <div class="card-3d">
+                    <div class="phone-mockup">
+                        <div style="background:#1a1a1a; width:280px; height:560px; border-radius:40px; border:12px solid #333; box-shadow:0 20px 60px rgba(0,0,0,0.3); position:relative; overflow:hidden; color:white; transform: scale(0.5);">
+                            <!-- Phone Status Bar -->
+                            <div style="background:#000; padding:8px 15px; font-size:11px; display:flex; justify-content:space-between; align-items:center;">
+                                <span>9:41</span>
+                                <div style="display:flex; gap:3px;">📶 📡 🔋</div>
+                            </div>
+                            <!-- Screen Content -->
+                            <div style="padding:20px; height:500px; background:linear-gradient(135deg, #f8f9ff 0%, #f0f7ff 100%); color:#1a1a1a; overflow-y:auto;">
+                                <!-- Header -->
+                                <div style="text-align:center; margin-bottom:30px;">
+                                    <h3 style="margin:0; color:var(--brand-purple); font-size:20px;">QK Traders Sacco</h3>
+                                    <p style="margin:5px 0 0; color:#888; font-size:11px;">Mobile Banking</p>
+                                </div>
+                                <!-- Coming Soon Badge -->
+                                <div style="background:linear-gradient(135deg, #fbbf24 0%, #f97316 100%); color:white; padding:12px; border-radius:12px; text-align:center; margin-bottom:20px; font-weight:700; font-size:12px;">
+                                    🚀 COMING SOON
+                                </div>
+                                <!-- Profile Card -->
+                                <div style="background:white; border-radius:16px; padding:16px; margin-bottom:20px; box-shadow:0 4px 12px rgba(0,0,0,0.08); border:1px solid #e5e7eb;">
+                                    <div style="display:flex; gap:12px; margin-bottom:16px;">
+                                        <div style="width:48px; height:48px; background:linear-gradient(135deg, #a855f7, #ec4899); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-weight:700; font-size:20px;">J</div>
+                                        <div>
+                                            <p style="margin:0; font-weight:700; color:#1a1a1a; font-size:14px;">John Mutesi</p>
+                                            <p style="margin:3px 0 0; color:#888; font-size:11px;">Member ID: QK-2024-1547</p>
+                                        </div>
+                                    </div>
+                                    <hr style="margin:12px 0; border:none; border-top:1px solid #e5e7eb;">
+                                    <div style="font-size:11px; color:#666; line-height:1.6;">
+                                        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                                            <span>Account Status:</span>
+                                            <span style="color:#10b981; font-weight:600;">Active</span>
+                                        </div>
+                                        <div style="display:flex; justify-content:space-between;">
+                                            <span>Member Since:</span>
+                                            <span style="color:#1a1a1a; font-weight:600;">Jan 2024</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Balance Card -->
+                                <div style="background:linear-gradient(135deg, var(--brand-purple) 0%, #a83279 100%); border-radius:16px; padding:16px; color:white; margin-bottom:20px; box-shadow:0 4px 12px rgba(128,35,94,0.2);">
+                                    <p style="margin:0 0 8px; font-size:11px; opacity:0.9;">Account Balance</p>
+                                    <h2 style="margin:0 0 12px; font-size:24px; font-weight:800;">UGX 850,000</h2>
+                                    <div style="border-top:1px solid rgba(255,255,255,0.2); padding-top:10px; font-size:10px;">
+                                        <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                                            <span>Savings</span>
+                                            <span>UGX 500,000</span>
+                                        </div>
+                                        <div style="display:flex; justify-content:space-between;">
+                                            <span>Fixed Deposit</span>
+                                            <span>UGX 350,000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Quick Actions -->
+                                <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                                    <div style="background:white; padding:12px; border-radius:12px; text-align:center; border:1px solid #e5e7eb; cursor:pointer;">
+                                        <div style="font-size:20px; margin-bottom:4px;">💰</div>
+                                        <p style="margin:0; font-size:10px; color:#666; font-weight:600;">Withdraw</p>
+                                    </div>
+                                    <div style="background:white; padding:12px; border-radius:12px; text-align:center; border:1px solid #e5e7eb; cursor:pointer;">
+                                        <div style="font-size:20px; margin-bottom:4px;">➕</div>
+                                        <p style="margin:0; font-size:10px; color:#666; font-weight:600;">Deposit</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-3d">
+                    <div class="card-icon">📊</div>
+                    <div class="card-title">Financial Planning</div>
+                    <div class="card-desc">Expert guidance to help you achieve your financial goals and build wealth.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="card-row initial-fade">
+        <div class="card">
+            <span class="card-label">🏦 Savings</span>
+            <h3>Savings Accounts</h3>
+            <p>Grow your savings with QK SACCO's flexible account — start from UGX 50,000 and earn competitive interest while securing your financial future.</p>
+            <ul class="card-list">
+                <li><span class="bullet">•</span> Fixed Deposit — High-yield, 6–24 month terms</li>
+                <li><span class="bullet">•</span> Junior Savings — For members under 17.</li>
+                <li><span class="bullet">•</span> Group Savings Scheme — For VSLAs, community groups & co-ops</li>
+                <li><span class="bullet">•</span> Instant Account Opening</li>
+                <li><span class="bullet">•</span> Free Account statement</li>
+            </ul>
+            <a href="more.html" class="btn-magenta">Learn More ↗</a>
+        </div>
+
+        <div class="card">
+            <span class="card-label">💰 Loans</span>
+            <h3>Loan Products</h3>
+            <p>Access affordable QK SACCO loans</p>
+            <ul class="card-list">
+                <li><span class="bullet">•</span> Personal Loans — Up to UGX 50M; up to 36 months.</li>
+                <li><span class="bullet">•</span> Business Loans — UGX 500k–100M; flexible collateral.</li>
+                <li><span class="bullet">•</span> Asset Financing — Vehicles, machinery, equipment.</li>
+                <li><span class="bullet">•</span> Emergency Loans — Up to UGX 5M; fast approval</li>
+                <li><span class="bullet">•</span> Education Loans — Tuition & school needs; flexible repayment.</li>
+            </ul>
+            <a href="more.html" class="btn-magenta">Learn More ↗</a>
+        </div>
+
+        <div class="card">
+            <span class="card-label">📱 Banking</span>
+            <h3>Digital Banking</h3>
+            <p>Enjoy convenient digital banking with QK SACCO — manage savings, apply for loans, and track transactions anytime via mobile, USSD, or online portal.</p>
+            <ul class="card-list">
+                <li><span class="bullet">•</span> Mobile banking for transfers, balances, and loan applications.</li>
+                <li><span class="bullet">•</span> USSD/KYC access without internet.</li>
+                <li><span class="bullet">•</span> Online portal for savings & loan management.</li>
+                <li><span class="bullet">•</span> SMS alerts and email statements.</li>
+            </ul>
+            <a href="more.html" class="btn-magenta">Learn More ↗</a>
+        </div>
+    </div>
+
+    <section class="vendor-container fade-in">
+        <div class="vendor-content">
+            <h2>At <span>QK Traders Sacco</span> your goals guide our work.</h2>
+            <ul class="vendor-list">
+                <li><span class="check-icon">✓</span> Daily Save with us</li>
+                <li><span class="check-icon">✓</span> Get a loan from us easily</li>
+                <li><span class="check-icon">✓</span> Our fixed interest account attracts interest</li>
+            </ul>
+            <div style="display: flex; align-items: center;">
+                <a href="membership.html" class="btn-member">Become A Member ↗</a>
+                <div class="rating">
+                    <span class="stars">★★★★★</span> 4.9
+                    <span style="color: #9ca3af; font-weight: 400; font-size: 10px; display: block;">98.8K Google Ratings</span>
+                </div>
+            </div>
+            
+            <div class="quote-card fade-in">
+                <div class="quote-circle"></div>
+                <div>
+                    <p class="quote-text">"Every member matters. Our promise is to serve with integrity, transparency and commitment to your financial success."</p>
+                    <span class="quote-author">Manager - QK Traders Sacco</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="vendor-image">
+            <img src="undp-ug-MarketSocialDist-2020.jpg" alt="Market Vendor">
+        </div>
+    </section>
+
+    <section class="loan-slider-section fade-in">
+        <div class="slider-header">
+            <h2>Simple and <span>speedy loan</span> options</h2>
+            <p>Founded in 2019, QK SACCO (Quicker Key Traders Savings and Credit Cooperative Society) is a member-owned cooperative that helps people save borrow and build sustainable livelihoods. We are uniquely tailored to salaried workers, self-employed and micro and informal sector earners to achieve more—together.</p>
+        </div>
+
+        <div class="loan-grid">
+            <div class="loan-card">
+                <h4>Personal touch</h4>
+                <p>We're here to help reach out to our folks.</p>
+            </div>
+            <div class="loan-card">
+                <h4>Pay Loans With Merchant</h4>
+                <p>MOBILE MONEY SERVICES (Allowance Service) *185*9*4068203# AIRTEL MERCHANT</p>
+            </div>
+            <div class="loan-card">
+                <h4>Fast funds</h4>
+                <p>Money is deposited instantly on your account</p>
+            </div>
+            <div class="loan-card">
+                <h4>Fixed interest rate</h4>
+                <p>You don't have to worry about it changing over the course of your loan.</p>
+            </div>
+            <div class="loan-card">
+                <h4>Predictable</h4>
+                <p>No surprises. You just focus on your monthly payment.</p>
+            </div>
+        </div>
+
+        <div class="stats-row">
+            <div class="stat-box">
+                <span class="label">ESTABLISHED SINCE</span>
+                <span class="value" style="color: #80235e;">2019</span>
+            </div>
+            <div class="stat-box green">
+                <span class="label">TRUSTED MEMBERS</span>
+                <span class="value" id="trusted-member-count" style="color: #059669;">1K</span>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="statement-section fade-in">
+        <h2>We uphold integrity, professionalism and innovation in all we do ensuring every member feels valued, supported, and confident in their <span>financial journey</span></h2>
+    </section>
+
+    <section class="financial-needs-container fade-in">
+        <div class="tabs-header">
+            <h2>Meet <span>your financial</span> needs.<br>Find peace of mind</h2>
+            <div class="tab-buttons">
+                <button class="tab-btn btn-savings active">Savings</button>
+                <button class="tab-btn btn-lending">Lending</button>
+            </div>
+        </div>
+
+        <div class="tab-content-card active" id="savings">
+            <h3>Savings</h3>
+            <p>Save easily with QK SACCO, start from UGX 50,000 and earn competitive interest through flexible, secure and member-focused savings plans.</p>
+            
+            <ul class="feature-list">
+                <li><span class="dot">•</span> <div><b>Flexible Saving Options:</b> Choose from Regular, Fixed Deposit, Junior, or Group Savings accounts.</div></li>
+                <li><span class="dot">•</span> <div><b>Competitive Interest Rates:</b> Grow your money with attractive annual returns.</div></li>
+                <li><span class="dot">•</span> <div><b>Secure & Reliable:</b> Your savings are protected within a trusted cooperative system.</div></li>
+                <li><span class="dot">•</span> <div><b>Member-Centered Benefits:</b> Enjoy easy access, transparency, and financial growth support.</div></li>
+            </ul>
+
+            <a href="#" class="btn-learn-more">Learn More ↗</a>
+        </div>
+
+        <div class="tab-content-card" id="lending">
+            <h3>Lending</h3>
+            <p>Access affordable loans with QK SACCO, tailored to meet your personal, business, and emergency needs with flexible terms and competitive rates.</p>
+            
+            <ul class="feature-list">
+                <li><span class="dot">•</span> <div><b>Personal Loans:</b> Up to UGX 50M; up to 36 months repayment.</div></li>
+                <li><span class="dot">•</span> <div><b>Business Loans:</b> UGX 500k–100M; flexible collateral options.</div></li>
+                <li><span class="dot">•</span> <div><b>Asset Financing:</b> Vehicles, machinery, and equipment financing.</div></li>
+                <li><span class="dot">•</span> <div><b>Emergency Loans:</b> Up to UGX 5M; fast approval process.</div></li>
+                <li><span class="dot">•</span> <div><b>Education Loans:</b> Tuition and school needs; flexible repayment.</div></li>
+            </ul>
+
+            <a href="#" class="btn-learn-more">Learn More ↗</a>
+        </div>
+    </section>
+
+    <section class="loan-promo">
+        <div class="loan-promo-text">
+            <h2>Why apply <span>LOAN</span> from QK Traders Sacco</h2>
+            
+            <div class="promo-item">
+                <div class="promo-icon">📉</div>
+                <div>
+                    <h4>Affordable Interest Rates</h4>
+                    <p>Enjoy lower and fair interest rates designed to help you achieve your goals without financial strain.</p>
+                </div>
+            </div>
+
+            <div class="promo-item">
+                <div class="promo-icon">💰</div>
+                <div>
+                    <h4>Flexible Repayment Terms</h4>
+                    <p>Choose repayment schedules that fit your income and business cash flow.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="loan-promo-image">
+            <img src="https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&w=800" alt="Financial Planning">
+        </div>
+    </section>
+
+
+    <section class="process-section">
+        <div class="process-info">
+            <h2>Our <span>process</span> is simple yet effective</h2>
+            <p>Learn more about how we can help you in building your next generation of Sacco Operations</p>
+            
+            <div class="interest-list">
+                <h4>Interested in something else?</h4>
+                <ul>
+                    <li>Express Interest in acquiring a loan with us</li>
+                    <li>Submit your interest in becoming a Sacco Member</li>
+                    <li>Subscribe to stay up to date with QK Traders Sacco updates</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="process-form">
+            <form action="https://formspree.io/f/xovkrzlw" method="POST">
+                <div class="form-row">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="text" name="phone" placeholder="Your Phone" required>
+                </div>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn-submit">Post Message ↗</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="membership-promo">
+        <div class="title-box">
+            <h2>Interested in becoming a <span class="purple">member?</span> or buying <span class="purple">shares</span> talk to us and enjoy the benefits</h2>
+        </div>
+        <div class="text-box">
+            Becoming a member of QK SACCO means joining a community built on trust, cooperation, and shared growth. As a member, you gain ownership in the society through share capital, giving you the power to influence decisions that shape your financial future. You'll enjoy access to affordable loans, competitive savings returns, financial training, and welfare benefits designed to uplift you and your family.
+        </div>
+    </section>
+
+
+
+<section class="faq-section">
+    <div class="faq-container">
+        <div class="faq-header">
+            <h2>Your burning <span>question</span>,<br>answered</h2>
+            <p>If you're new or looking for answers to your questions, this guide will help you learn more about our services and their features.</p>
+        </div>
+
+        <div class="faq-grid">
+            <div class="faq-col">
+                <details open>
+                    <summary>Why should I care about financial planning?</summary>
+                    <div class="content">Financial planning is essential because it helps you achieve your financial goals and secure your financial future.</div>
+                </details>
+                <details>
+                    <summary>What are the different types of investments?</summary>
+                    <div class="content">Information about stocks, bonds, and mutual funds goes here.</div>
+                </details>
+                <details>
+                    <summary>How can I start saving for retirement?</summary>
+                    <div class="content">It's never too early to start! Common options include Ugx10,000 </div>
+                </details>
+                <details>
+                    <summary>What is the importance of emergency funds?</summary>
+                    <div class="content">Emergency funds provide a safety net for unexpected expenses.</div>
+                </details>
+            </div>
+
+            <div class="faq-col">
+                <details open>
+                    <summary>What can I use a personal loan for?</summary>
+                    <div class="content">Many people apply for a low-interest personal loan to consolidate high-interest credit card debt.</div>
+                </details>
+                <details>
+                    <summary>What is a personal loan?</summary>
+                    <div class="content">A personal loan is an amount of money you can borrow for various uses.</div>
+                </details>
+                <details>
+                    <summary>What credit score is needed for a personal loan?</summary>
+                    <div class="content">While it varies, a score of 600+ is generally required for better rates.</div>
+                </details>
+                <details>
+                    <summary>How much money can I get a personal loan for?</summary>
+                    <div class="content">Loan amounts typically range from Ugx, 100,000 to $5M depending on income.</div>
+                </details>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-top-bar">
+        <a href="#" class="footer-brand">
+            <img src="qk logo.png" alt="QK Logo" width="90" height="90"> 
+            <span class="brand-name">QK Traders Sacco</span>
+        </a>
+
+        <nav class="footer-nav">
+            <a href="https://www.facebook.com/quadralkay" target="_blank" rel="noopener" aria-label="Facebook"><img src="facebook.svg" alt=""></a>
+            <a href="https://x.com/@QkTradersNdeeba" target="_blank" rel="noopener" aria-label="X"><img src="x.jpg" alt=""></a>
+            <a href="https://www.tiktok.com/@qktraderssacco" target="_blank" rel="noopener" aria-label="TikTok"><img src="tiktok.jpg" alt=""></a>
+            <a href="https://www.youtube.com/channel/UCuh3HxplZlNXIbYhBjaaCZQ" target="_blank" rel="noopener" aria-label="YouTube"><img src="youtube.jpg" alt=""></a>
+        </nav>
+
+        <div class="footer-actions">
+            <button class="btn-contact">Contact us</button>
+            <div class="chat-icon chat-toggle">
+                <svg width="20" fill="white" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-main-content">
+        <div class="footer-column">
+            <h4>Product</h4>
+            <ul>
+                <li><a href="#">Overview</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Solutions</a></li>
+                <li><a href="#">Tutorials</a></li>
+                <li><a href="#">Social Corporate Responsibility</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="https://www.brightermonday.co.ug" target="_blank" rel="noopener">Careers</a></li>
+                <li><a href="https://www.monitor.co.ug" target="_blank" rel="noopener">News</a></li>
+                <li><a href="https://www.newvision.co.ug" target="_blank" rel="noopener">Media Kit</a></li>
+                <li><a href="contact-us.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Resources</h4>
+            <ul>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Tutorials</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Services</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Collaborate</h4>
+            <ul>
+                <li><a href="#">Partners</a></li>
+                <li><a href="#">Partners Program</a></li>
+                <li><a href="#">Affiliate Program</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">HR Partner Program</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Contact</h4>
+            <span class="contact-info">+256 702 801 507</span>
+            <span class="contact-sub">quadralkpeoplessaccco@gmail.com</span>
+            <br>
+            <span class="contact-sub">Ndeeba Opposite<br>KCB Bank</span>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>Copyright © 2026 <strong>QK Traders Sacco</strong>. All rights reserved</p>
+        <div class="footer-bottom-links">
+            <a href="#">Privacy Policy.</a>
+            <a href="#">Contact.</a>
+            <a href="#">Terms and Conditions.</a>
+        </div>
+    </div>
+</footer>
+
+<div class="chat-widget">
+    <div class="chat-options">
+        <a href="https://wa.me/256702801507" class="chat-option whatsapp">
+            <span class="option-icon">📱</span>
+            <span class="option-text">WhatsApp</span>
+        </a>
+        <a href="tel:+256702801507" class="chat-option call">
+            <span class="option-icon">📞</span>
+            <span class="option-text">Call</span>
+        </a>
+    </div>
+    <button class="chat-toggle">💬</button>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        const fadeElements = document.querySelectorAll('.fade-in');
+        fadeElements.forEach(el => observer.observe(el));
+
+        const memberCount = document.getElementById('member-count');
+        if (memberCount) {
+            const endValue = 8000;
+            const duration = 3600;
+            const startTime = performance.now();
+            const updateCount = (now) => {
+                const progress = Math.min((now - startTime) / duration, 1);
+                const easedProgress = 1 - Math.pow(1 - progress, 3);
+                const currentValue = Math.max(1, Math.floor(easedProgress * endValue));
+                memberCount.textContent = currentValue.toLocaleString() + 'K';
+                if (progress < 1) requestAnimationFrame(updateCount);
+            };
+            requestAnimationFrame(updateCount);
+        }
+
+        const trustedMemberCount = document.getElementById('trusted-member-count');
+        if (trustedMemberCount) {
+            const endValue = 8000;
+            const duration = 3600;
+            const startTime = performance.now();
+            const updateTrustedCount = (now) => {
+                const progress = Math.min((now - startTime) / duration, 1);
+                const easedProgress = 1 - Math.pow(1 - progress, 3);
+                const currentValue = Math.max(1, Math.floor(easedProgress * endValue));
+                trustedMemberCount.textContent = currentValue.toLocaleString() + 'K+';
+                if (progress < 1) requestAnimationFrame(updateTrustedCount);
+            };
+            requestAnimationFrame(updateTrustedCount);
+        }
+
+        // Tab switching
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content-card');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                // Show corresponding content
+                const targetId = button.classList.contains('btn-savings') ? 'savings' : 'lending';
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+
+        // Chat widget toggle
+        const chatToggles = document.querySelectorAll('.chat-toggle');
+        const chatWidget = document.querySelector('.chat-widget');
+
+        chatToggles.forEach(el => {
+            el.addEventListener('click', function(e) {
+                e.stopPropagation();
+                chatWidget.classList.toggle('expanded');
+            });
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!chatWidget.contains(e.target)) {
+                chatWidget.classList.remove('expanded');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Secure member login for QK Trader Sacco. Access your dashboard to view savings balances, loan status, and transaction history.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications | QK Traders Sacco</title>
+    <link rel="icon" type="image/png" href="qk logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="responsive.css">
+    <style>
+        :root {
+            --brand-purple: #80235e;
+            --vibrant-purple: #9b28f3; /* The exact bright purple from your screenshot */
+            --text-dark: #1a1a1a;
+            --text-gray: #6b7280;
+            --footer-heading: #9ca3af;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .initial-fade {
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        body { font-family: 'Inter', sans-serif; margin: 0; background: #fff; color: var(--text-dark); -webkit-font-smoothing: antialiased; }
+
+        /* --- TOP NAVIGATION BAR --- */
+        .top-nav { position: sticky; top: 0; z-index: 1100; background: var(--brand-purple); color: white; padding: 12px 10%; display: flex; justify-content: space-between; align-items: center; font-size: 11px; font-weight: 500; }
+        .top-nav a { color: white; text-decoration: none; font-weight: 600; }
+        .top-nav .top-social { display: flex; align-items: center; gap: 15px; }
+        .top-nav .top-social a { display: flex; align-items: center; justify-content: center; }
+        .top-nav .top-social a img { width: 24px; height: 24px; border-radius: 20px; }
+        .top-nav .top-social a:not(:last-child)::after { content: ''; margin-left: 15px; width: 1px; height: 24px; background: rgba(255,255,255,0.3); }
+        .top-nav-center { position: absolute; left: 50%; transform: translateX(-50%); padding: 7px 25px; color: #fff; background: linear-gradient(90deg, #d946ef, #fb7185); clip-path: polygon(13px 0, calc(100% - 13px) 0, 100% 50%, calc(100% - 13px) 100%, 13px 100%, 0 50%); box-shadow: 0 7px 16px rgba(35,7,28,.25); font-size: 12px; font-weight: 800; letter-spacing: .4px; white-space: nowrap; }
+        .top-nav-right { display: flex; gap: 20px; align-items: center; }
+        .top-nav-right a { color: white; text-decoration: none; font-weight: 600; }
+        .top-nav-right span { color: #ddd; }
+
+        /* --- MAIN HEADER --- */
+        .header-main { position: relative; display: flex; justify-content: space-between; align-items: center; padding: 20px 10%; background: white; }
+        .logo-box { display: flex; align-items: center; gap: 10px; font-weight: 800; color: var(--brand-purple); text-decoration: none; font-size: 16px; letter-spacing: -0.5px; }
+        .logo-icon { width: 120px; height: 90px; background: url('qk logo.png') center/contain no-repeat; border-radius: 20%; }
+        
+        .nav-menu { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
+        .nav-menu { position: relative; }
+        .nav-menu::after { content: ''; position: absolute; right: 0; bottom: -9px; left: 0; height: 2px; background: linear-gradient(90deg, #38bdf8, #8b5cf6, #facc15, #ef4444, #f97316, #38bdf8); background-size: 300% 100%; animation: navSpectrum 5s linear infinite; }
+        @keyframes navSpectrum { to { background-position: 300% 0; } }
+        .nav-menu a { text-decoration: none; color: #333; font-weight: 600; font-size: 13px; }
+        .nav-menu a.active { color: #10b981; } /* The teal active state */
+
+        .header-actions { display: flex; align-items: center; gap: 20px; }
+        .btn-get-started { background: #000; color: #fff; padding: 10px 24px; border-radius: 20px; text-decoration: none; font-weight: 700; font-size: 13px; display: flex; align-items: center; gap: 8px; }
+
+        /* --- PUBLICATIONS HERO (MATCHING WEEEEE.PNG) --- */
+        .hero-container { padding: 0 20px; margin-top: 10px; }
+        .pub-hero-box {
+            background: linear-gradient(115deg, rgba(43, 70, 83, .86), rgba(128, 35, 94, .78)), url('qk.jpeg') center/cover no-repeat;
+            border-radius: 40px;
+            padding: 120px 20px;
+            text-align: center;
+            color: white;
+            max-width: 1400px;
+            margin: 0 auto;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,.15), 0 18px 38px rgba(72,20,57,.18);
+        }
+        .pub-hero-box h1 { font-size: 52px; font-weight: 800; margin: 0; letter-spacing: -1px; }
+        .pub-breadcrumb { font-size: 12px; margin-top: 15px; opacity: 0.7; font-weight: 500; }
+
+        /* --- FILE LIST SECTION --- */
+        .publications-body {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 10%;
+        }
+        .file-link {
+            font-size: 13px;
+            color: #4b5563;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .file-link span { color: #9ca3af; margin-left: 4px; }
+        .file-link:hover { text-decoration: underline; }
+
+        /* --- FOOTER (EXACT ALIGNMENT) --- */
+        .footer-social-section {
+            padding: 60px 10% 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        .footer-social-links { display: flex; gap: 25px; color: #6b7280; font-size: 13px; }
+        .footer-social-links span { cursor: pointer; }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 40px;
+            padding: 60px 10% 80px;
+        }
+        .footer-col h4 { font-size: 12px; color: var(--footer-heading); text-transform: uppercase; margin-bottom: 25px; font-weight: 700; letter-spacing: 0.5px; }
+        .footer-col ul { list-style: none; padding: 0; margin: 0; }
+        .footer-col li { margin-bottom: 14px; font-size: 13px; color: var(--text-gray); }
+        
+        .contact-col li { color: #4b5563; }
+        .contact-col .phone-num { font-weight: 800; color: #111827; font-size: 15px; margin-bottom: 8px; }
+
+        .copyright-bar {
+            padding: 30px 10%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+            color: rgba(255,255,255,.82);
+            background: linear-gradient(105deg, #5e1845, var(--brand-purple));
+        }
+        .copyright-bar > div:first-child { padding: 10px 17px; border-radius: 999px; color: #fff; background: linear-gradient(90deg, #d946ef, #fb7185); box-shadow: 0 8px 18px rgba(35,7,28,.25); font-weight: 700; }
+
+        @media (max-width: 1024px) {
+            .footer-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .top-nav { flex-direction: column; gap: 10px; text-align: center; padding: 10px 5%; }
+            .top-nav-center { position: static; transform: none; }
+            .top-nav-right { gap: 10px; flex-wrap: wrap; justify-content: center; }
+            .header-main { flex-direction: column; gap: 16px; padding: 15px 5%; }
+            .nav-menu { flex-direction: row; gap: 10px; flex-wrap: wrap; justify-content: center; }
+            .nav-menu li { min-width: 90px; text-align: center; }
+            .btn-get-started { padding: 9px 14px; font-size: 14px; }
+            .pub-hero-box { padding: 80px 20px; }
+            .pub-hero-box h1 { font-size: 36px; }
+            .publications-body { margin: 40px auto; padding: 0 5%; }
+            .footer-social-section { flex-direction: column; gap: 20px; text-align: center; padding: 40px 5% 20px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; padding: 40px 5% 60px; }
+            .copyright-bar { flex-direction: column; gap: 10px; text-align: center; padding: 20px 5%; }
+        }
+
+        @media (max-width: 480px) {
+            .top-nav { font-size: 11px; padding: 8px 4%; }
+            .top-nav .top-social a img { width: 20px; height: 20px; }
+            .nav-menu a { font-size: 13px; }
+            .btn-get-started { padding: 8px 12px; font-size: 12px; }
+            .pub-hero-box h1 { font-size: 28px; }
+            .pub-hero-box { padding: 60px 15px; }
+            .footer-col h4 { font-size: 11px; }
+            .footer-col li { font-size: 12px; }
+            .copyright-bar { font-size: 11px; }
+        }
+
+        /* --- CHAT WIDGET --- */
+        .chat-widget { position: fixed; bottom: 30px; right: 30px; z-index: 1000; }
+        .chat-options { display: none; flex-direction: column; gap: 10px; margin-bottom: 10px; }
+        .chat-widget.expanded .chat-options { display: flex; }
+        .chat-option { display:flex; align-items:center; gap:8px; padding:11px 16px; border:1px solid rgba(34,197,94,.38); border-radius:25px; color:#14532d; background:linear-gradient(110deg,#fff,#f0fdf4 48%,#86efac); font-size:14px; font-weight:700; text-decoration:none; box-shadow:0 6px 16px rgba(22,101,52,.18); transition:transform .45s .08s ease,box-shadow .45s .08s ease,filter .45s .08s ease; }.chat-option:hover,.chat-option:focus-visible { transform:translateX(-8px) scale(1.05); box-shadow:0 12px 24px rgba(22,101,52,.3); filter:saturate(1.2); }.chat-option:active { transform:translateX(-4px) scale(.96); transition-delay:0s; }.chat-option.whatsapp,.chat-option.call { color:#14532d; background:linear-gradient(110deg,#fff,#f0fdf4 48%,#86efac); }
+        .option-icon { font-size: 16px; }
+        .chat-toggle { width:60px; height:60px; background:linear-gradient(135deg,#fff,#86efac); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#166534; font-size:24px; border:1px solid rgba(34,197,94,.5); cursor:pointer; box-shadow:0 10px 20px rgba(22,101,52,.28); animation:chatPulse 2.6s ease-in-out infinite; transition:transform .45s .08s ease,box-shadow .45s .08s ease; }.chat-toggle:hover,.chat-toggle:focus-visible { transform:scale(1.12) rotate(6deg); box-shadow:0 14px 28px rgba(22,101,52,.4); } @keyframes chatPulse { 50% { box-shadow:0 10px 20px rgba(22,101,52,.28),0 0 0 9px rgba(134,239,172,.18); } }
+
+        .top-nav img{
+            width: 30px;
+            height: 30px;
+            border-radius: 20px;
+            background-color: white;
+            corner-shape: squircle;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-nav">
+        <div class="top-social">
+            <a href="https://wa.me/256702801507" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="whatsapp.jpg" alt="WhatsApp"></a>
+            <a href="https://www.facebook.com/quadralkay" target="_blank" rel="noopener" aria-label="Facebook"><img src="facebook.svg" alt="Facebook"></a>
+            <a href="https://www.tiktok.com/@qktraderssacco" target="_blank" rel="noopener" aria-label="TikTok"><img src="tiktok.jpg" alt="TikTok"></a>
+            <a href="https://www.youtube.com/channel/UCuh3HxplZlNXIbYhBjaaCZQ" target="_blank" rel="noopener" aria-label="YouTube"><img src="youtube.jpg" alt="YouTube"></a>
+            <a href="https://x.com/@QkTradersNdeeba" target="_blank" rel="noopener" aria-label="X"><img src="x.jpg" alt="X"></a>
+        </div>
+        <div class="top-nav-center">To Live Better, Walk With Us</div>
+        <div class="top-nav-right">
+            <a href="mailto:info@qktraders.com">✉ Email us</a>
+            <span>|</span>
+            <a href="tel:+256702801507">💬 Live chat</a>
+            <span>|</span>
+            <a href="https://wa.me/256702801507" target="_blank" rel="noopener">📱 WhatsApp</a>
+        </div>
+    </div>
+
+    <header class="header-main">
+        <a href="#" class="logo-box">
+            <div class="logo-icon"></div>
+            QK TRADERS SACCO
+        </a>
+        <nav>
+            <ul class="nav-menu">
+              <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html" >Services </a></li>
+            <li><a href="profile.html" class="active">Publications ▾</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <span>🔍</span> <span>👤</span> <span>👜</span>
+            <a href="membership.html" class="btn-get-started">Get Started ↗</a>
+        </div>
+    </header>
+
+    <div class="hero-container">
+        <section class="pub-hero-box initial-fade">
+            <h1>Publications</h1>
+            <div class="pub-breadcrumb">Home > <span style="color:rgba(255,255,255,0.5)">Publications</span></div>
+        </section>
+    </div>
+
+    <main class="publications-body fade-in">
+        <a href="#" class="file-link">
+            Company Profile <span>( 17 downloads )</span>
+        </a>
+    </main>
+
+    <div class="footer-social-section">
+        <div style="font-weight: 800; color: var(--brand-purple); font-size: 18px;">QK TRADERS SACCO</div>
+        <div class="footer-social-links">
+            <a href="https://www.facebook.com/quadralkay" target="_blank" rel="noopener" aria-label="Facebook"><img src="facebook.svg" alt="" width="22" height="22"></a><a href="https://x.com/@QkTradersNdeeba" target="_blank" rel="noopener" aria-label="X"><img src="x.jpg" alt="" width="22" height="22" style="border-radius:50%;"></a><a href="https://www.tiktok.com/@qktraderssacco" target="_blank" rel="noopener" aria-label="TikTok"><img src="tiktok.jpg" alt="" width="22" height="22" style="border-radius:50%;"></a><a href="https://www.youtube.com/channel/UCuh3HxplZlNXIbYhBjaaCZQ" target="_blank" rel="noopener" aria-label="YouTube"><img src="youtube.jpg" alt="" width="22" height="22" style="border-radius:50%;"></a>
+        </div>
+    </div>
+
+    <section class="footer-grid">
+        <div class="footer-col">
+            <h4>Product</h4>
+            <ul><li>Overview</li><li>Features</li><li>Solutions</li><li>Tutorials</li><li>Social Corporate Responsibility</li></ul>
+        </div>
+        <div class="footer-col">
+            <h4>Company</h4>
+            <ul><li><a href="about.html">About Us</a></li><li><a href="https://www.brightermonday.co.ug" target="_blank" rel="noopener">Careers</a></li><li><a href="https://www.monitor.co.ug" target="_blank" rel="noopener">News</a></li><li><a href="https://www.newvision.co.ug" target="_blank" rel="noopener">Media Kit</a></li><li><a href="contact-us.html">Contact</a></li></ul>
+        </div>
+        <div class="footer-col">
+            <h4>Resources</h4>
+            <ul><li>Blog</li><li>Help Center</li><li>Tutorials</li><li>Support</li><li>Services</li></ul>
+        </div>
+        <div class="footer-col">
+            <h4>Collaborate</h4>
+            <ul><li>Partners</li><li>Partners Program</li><li>Affiliate Program</li><li>Community</li><li>HR Partner Program</li></ul>
+        </div>
+        <div class="footer-col contact-col">
+            <h4>Contact</h4>
+            <ul>
+                <li class="phone-num">+256 702 801 507</li>
+                <li>quadralkpeoplessaccco@gmail.com</li>
+                <li>Ndeeba Opposite<br>KCB Bank</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="copyright-bar">
+        <div>Copyright © 2026 QK Traders Sacco. All rights reserved</div>
+        <div>Privacy Policy . Contact . Terms and Conditions</div>
+    </div>
+
+    <div class="chat-widget">
+        <div class="chat-options">
+            <a href="https://wa.me/256702801507" class="chat-option whatsapp">
+                <span class="option-icon">📱</span>
+                <span class="option-text">WhatsApp</span>
+            </a>
+            <a href="tel:+256702801507" class="chat-option call">
+                <span class="option-icon">📞</span>
+                <span class="option-text">Call</span>
+            </a>
+        </div>
+        <button class="chat-toggle">💬</button>
+    </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        const fadeElements = document.querySelectorAll('.fade-in');
+        fadeElements.forEach(el => observer.observe(el));
+
+        // Chat widget toggle
+        const chatIcon = document.querySelector('.chat-toggle');
+        const chatWidget = document.querySelector('.chat-widget');
+
+        chatIcon.addEventListener('click', function() {
+            chatWidget.classList.toggle('expanded');
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!chatWidget.contains(e.target)) {
+                chatWidget.classList.remove('expanded');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

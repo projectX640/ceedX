@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn more about QK Traders SACCO savings accounts, loan products, and digital banking services.">
+    <title>Our Services | QK Traders Sacco</title>
+    <link rel="icon" type="image/png" href="qk logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="responsive.css">
+    <style>
+        :root { --brand-purple: #80235e; --teal: #10b981; --text-gray: #6b7280; }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { margin: 0; color: #1f2937; font-family: 'Inter', sans-serif; font-size: 17px; line-height: 1.6; background: #fff; }
+        .top-nav { position: sticky; top: 0; z-index: 1100; display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 12px 10%; color: #fff; background: var(--brand-purple); font-size: 14px; font-weight: 500; }
+        .top-social, .top-nav-right { display: flex; align-items: center; gap: 14px; }
+        .top-social a { display: flex; align-items: center; }
+        .top-social img { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; }
+        .top-nav a { color: #fff; text-decoration: none; font-weight: 600; }
+        .top-nav-center { position: absolute; left: 50%; transform: translateX(-50%); padding: 7px 25px; color: #fff; background: linear-gradient(90deg, #d946ef, #fb7185); clip-path: polygon(13px 0, calc(100% - 13px) 0, 100% 50%, calc(100% - 13px) 100%, 13px 100%, 0 50%); box-shadow: 0 7px 16px rgba(35,7,28,.25); font-size: 12px; font-weight: 800; letter-spacing: .4px; white-space: nowrap; }
+        .header-main { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 15px 10%; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.05); }
+        .logo-box { display: flex; align-items: center; gap: 10px; color: var(--brand-purple); font-size: 18px; font-weight: 800; text-decoration: none; }
+        .logo-box img { width: 82px; height: 62px; border-radius: 20%; object-fit: contain; }
+        .nav-menu { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; padding: 0; margin: 0; list-style: none; }
+        .nav-menu { position: relative; }
+        .nav-menu::after { content: ''; position: absolute; right: 0; bottom: -9px; left: 0; height: 2px; background: linear-gradient(90deg, #38bdf8, #8b5cf6, #facc15, #ef4444, #f97316, #38bdf8); background-size: 300% 100%; animation: navSpectrum 5s linear infinite; }
+        @keyframes navSpectrum { to { background-position: 300% 0; } }
+        .nav-menu a { color: #374151; font-size: 15px; font-weight: 600; text-decoration: none; }
+        .nav-menu a.active, .nav-menu a:hover { color: var(--teal); }
+        .btn-get-started { display: inline-flex; align-items: center; justify-content: center; color: #fff; background: #000; padding: 11px 18px; border-radius: 8px; font-size: 15px; font-weight: 700; text-decoration: none; }
+        .page-hero { margin: 20px auto 0; max-width: 1400px; padding: 82px 10%; color: #fff; text-align: center; background: linear-gradient(115deg, rgba(64, 118, 84, .92), rgba(128, 35, 94, .88)), url('qk.jpeg') center/cover; border-radius: 38px; }
+        .page-hero p { margin: 0 0 12px; font-size: 13px; font-weight: 800; letter-spacing: 1.7px; text-transform: uppercase; }
+        .page-hero h1 { max-width: 760px; margin: 0 auto; font-size: clamp(36px, 5vw, 62px); line-height: 1.08; }
+        .page-hero .intro { max-width: 700px; margin: 22px auto 0; font-size: 19px; line-height: 1.7; font-weight: 500; letter-spacing: 0; text-transform: none; }
+        .services-section { max-width: 1280px; margin: 0 auto; padding: 85px 30px; }
+        .section-heading { max-width: 670px; margin-bottom: 38px; }
+        .eyebrow { margin: 0 0 12px; color: var(--brand-purple); font-size: 15px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; }
+        .section-heading h2 { margin: 0; font-size: clamp(28px, 4vw, 43px); line-height: 1.16; color: #111827; }
+        .section-heading h2 span { color: var(--brand-purple); }
+        .section-heading > p:last-child { margin: 18px 0 0; color: var(--text-gray); font-size: 19px; line-height: 1.75; }
+        .service-grid { display: grid; grid-template-columns: 1fr; gap: 22px; align-items: stretch; }
+        .service-card { display: flex; flex-direction: column; width: calc(100% - 110px); padding: 34px 29px; border: 1px solid #f0eaf0; border-radius: 24px; background: #fff; box-shadow: 0 10px 35px rgba(0,0,0,.055); transition: transform .25s ease, box-shadow .25s ease; }
+        .service-card:nth-child(even) { margin-left: auto; }
+        .service-card:first-child { position: relative; overflow: hidden; padding-right: 39%; }
+        .savings-visual { position: absolute; top: 0; right: 0; width: 39%; height: 100%; overflow: hidden; background: var(--brand-purple); transform: skewX(-9deg); transform-origin: bottom right; }
+        .savings-visual::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,0,0,.53), rgba(128,35,94,.34)); }
+        .savings-visual img { width: 100%; height: 100%; object-fit: cover; transform: skewX(9deg) scale(1.18); transform-origin: center; }
+        .service-card:nth-child(2) { position: relative; overflow: hidden; padding-left: 39%; }
+        .loan-visual { position: absolute; top: 0; left: 0; width: 39%; height: 100%; overflow: hidden; background: var(--brand-purple); transform: skewX(9deg); transform-origin: bottom left; }
+        .loan-visual::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,0,0,.55), rgba(128,35,94,.33)); }
+        .loan-visual img { width: 100%; height: 100%; object-fit: cover; transform: skewX(-9deg) scale(1.18); transform-origin: center; }
+        .service-card:nth-child(3) { position: relative; overflow: hidden; padding-right: 39%; }
+        .banking-visual { position: absolute; top: 0; right: 0; width: 39%; height: 100%; overflow: hidden; background: var(--brand-purple); transform: skewX(-9deg); transform-origin: bottom right; }
+        .banking-visual::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,0,0,.53), rgba(128,35,94,.34)); }
+        .banking-visual img { width: 100%; height: 100%; object-fit: cover; transform: skewX(9deg) scale(1.18); transform-origin: center; }
+        .visual-caption { position: absolute; inset: 0; z-index: 1; display: grid; place-content: center; padding: 24px; color: #fff; font-size: clamp(21px, 2.4vw, 31px); font-weight: 800; line-height: 1.15; letter-spacing: -.7px; text-align: center; text-shadow: 0 2px 12px rgba(0,0,0,.55); }
+        .visual-caption small { display: block; margin-top: 10px; color: rgba(255,255,255,.82); font-size: 12px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; }
+        .service-card:hover { transform: translateY(-7px); box-shadow: 0 18px 42px rgba(128,35,94,.13); }
+        .service-icon { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: #f8eaf2; font-size: 27px; }
+        .service-card h2 { margin: 22px 0 12px; color: #111827; font-size: 28px; line-height: 1.2; }
+        .service-card > p { margin: 0; color: var(--text-gray); font-size: 17px; line-height: 1.75; }
+        .service-card h3 { margin: 24px 0 10px; color: var(--brand-purple); font-size: 16px; letter-spacing: .3px; }
+        .feature-list { margin: 22px 0; padding: 0; list-style: none; }
+        .feature-list li { display: flex; gap: 10px; margin-bottom: 14px; color: #4b5563; font-size: 16px; line-height: 1.6; }
+        .feature-list li::before { content: '✓'; flex: 0 0 19px; width: 19px; height: 19px; color: var(--brand-purple); background: #f8eaf2; border-radius: 50%; font-size: 12px; font-weight: 800; line-height: 19px; text-align: center; }
+        .service-note { margin-top: auto; padding: 15px 16px; color: #6b7280; background: #fafafa; border-radius: 12px; font-size: 14px; line-height: 1.65; }
+        .info-band { display: grid; grid-template-columns: 1.1fr .9fr; gap: 45px; align-items: center; max-width: 1280px; margin: 0 auto 82px; padding: 58px 7%; border-radius: 32px; color: #fff; background: var(--brand-purple); }
+        .info-band h2 { margin: 0; font-size: clamp(28px, 3.5vw, 42px); line-height: 1.18; }
+        .info-band p { margin: 16px 0 0; color: rgba(255,255,255,.82); font-size: 18px; line-height: 1.75; }
+        .info-actions { display: flex; flex-wrap: wrap; gap: 13px; justify-content: flex-end; }
+        .info-actions a { padding: 12px 19px; border: 1px solid rgba(255,255,255,.55); border-radius: 8px; color: #fff; font-size: 14px; font-weight: 700; text-decoration: none; }
+        .info-actions .btn-light { color: var(--brand-purple); border-color: #fff; background: #fff; }
+        footer { padding: 36px 10%; color: rgba(255,255,255,.78); background: linear-gradient(105deg, #5e1845, var(--brand-purple)); }
+        .footer-content { display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 14px; }
+        .footer-brand { display: flex; align-items: center; gap: 8px; color: #fff; font-size: 17px; font-weight: 800; }
+        .footer-brand img { width: 44px; height: 38px; object-fit: contain; }
+        .footer-centre { display: flex; align-items: center; justify-content: center; text-align: center; }
+        .footer-copy { display: inline-flex; align-items: center; justify-content: center; padding: 12px 20px; border-radius: 999px; color: #fff; background: linear-gradient(90deg, #d946ef, #fb7185); box-shadow: 0 10px 22px rgba(35, 7, 28, .28); font-size: 13px; font-weight: 700; }
+        .footer-links { display: flex; flex-wrap: wrap; gap: 16px; }
+        .footer-links a { color: #fff; font-weight: 600; text-decoration: none; transition: color .2s ease; }
+        .footer-links a:hover { color: #b8f3da; }
+        .chat-widget { position: fixed; right: 30px; bottom: 30px; z-index: 1200; }
+        .chat-options { display: none; flex-direction: column; gap: 10px; margin-bottom: 10px; }
+        .chat-widget.expanded .chat-options { display: flex; }
+        .chat-option { display: flex; align-items: center; gap: 8px; padding: 11px 16px; border: 1px solid rgba(34,197,94,.38); border-radius: 25px; color: #14532d; background: linear-gradient(110deg,#fff,#f0fdf4 48%,#86efac); font-size: 14px; font-weight: 700; text-decoration: none; box-shadow: 0 6px 16px rgba(22,101,52,.18); transition: transform .45s .08s ease,box-shadow .45s .08s ease,filter .45s .08s ease; }
+        .chat-option:hover,.chat-option:focus-visible { transform: translateX(-8px) scale(1.05); box-shadow: 0 12px 24px rgba(22,101,52,.3); filter: saturate(1.2); }
+        .chat-option:active { transform: translateX(-4px) scale(.96); transition-delay: 0s; }
+        .chat-toggle { width: 60px; height: 60px; border: 1px solid rgba(34,197,94,.5); border-radius: 50%; color: #166534; background: linear-gradient(135deg,#fff,#86efac); font-size: 24px; cursor: pointer; box-shadow: 0 10px 20px rgba(22,101,52,.28); animation: chatPulse 2.6s ease-in-out infinite; transition: transform .45s .08s ease,box-shadow .45s .08s ease; }
+        .chat-toggle:hover,.chat-toggle:focus-visible { transform: scale(1.12) rotate(6deg); box-shadow: 0 14px 28px rgba(22,101,52,.4); }
+        @keyframes chatPulse { 50% { box-shadow: 0 10px 20px rgba(22,101,52,.28),0 0 0 9px rgba(134,239,172,.18); } }
+        @media (max-width: 980px) { .top-nav-center { position: static; transform: none; } .header-main { justify-content: center; } .service-card { width: calc(100% - 50px); } .service-card:first-child, .service-card:nth-child(3) { padding-right: 42%; } .service-card:nth-child(2) { padding-left: 42%; } .savings-visual, .loan-visual, .banking-visual { width: 42%; } .info-band { margin-right: 30px; margin-left: 30px; grid-template-columns: 1fr; } .info-actions { justify-content: flex-start; } }
+        @media (max-width: 680px) { .top-nav, .top-nav-right, .header-main, .footer-content { flex-direction: column; text-align: center; } .top-nav { padding: 12px 5%; } .top-nav-right { gap: 8px; } .header-main { padding: 14px 5%; } .nav-menu { justify-content: center; gap: 12px; } .page-hero { margin-top: 0; border-radius: 0; padding: 70px 7%; } .services-section { padding: 58px 20px; } .service-card, .service-card:first-child, .service-card:nth-child(2), .service-card:nth-child(3) { width: 100%; padding-right: 29px; padding-left: 29px; } .savings-visual, .loan-visual, .banking-visual { position: relative; top: auto; right: auto; left: auto; width: calc(100% + 58px); height: 210px; margin: 27px -29px -34px; transform: skewX(-6deg); } .savings-visual img, .loan-visual img, .banking-visual img { transform: skewX(6deg) scale(1.1); } .info-band { margin: 0 20px 55px; padding: 42px 28px; } .info-actions { justify-content: center; } footer { padding: 28px 5%; } .footer-content { gap: 14px; } }
+    </style>
+</head>
+<body>
+    <div class="top-nav">
+        <div class="top-social">
+            <a href="https://wa.me/256702801507" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="whatsapp.jpg" alt="WhatsApp"></a>
+            <a href="https://www.facebook.com/quadralkay" target="_blank" rel="noopener" aria-label="Facebook"><img src="facebook.svg" alt="Facebook"></a>
+            <a href="https://www.tiktok.com/@qktraderssacco" target="_blank" rel="noopener" aria-label="TikTok"><img src="tiktok.jpg" alt="TikTok"></a>
+            <a href="https://www.youtube.com/channel/UCuh3HxplZlNXIbYhBjaaCZQ" target="_blank" rel="noopener" aria-label="YouTube"><img src="youtube.jpg" alt="YouTube"></a>
+            <a href="https://x.com/@QkTradersNdeeba" target="_blank" rel="noopener" aria-label="X"><img src="x.jpg" alt="X"></a>
+        </div>
+        <span class="top-nav-center">To Live Better, Walk With Us</span>
+        <div class="top-nav-right"><a href="mailto:info@qktraders.com">✉ Email us</a><a href="tel:+256702801507">💬 Live chat</a><a href="https://wa.me/256702801507" target="_blank" rel="noopener">📱 WhatsApp</a></div>
+    </div>
+    <header class="header-main">
+        <a href="index.html" class="logo-box"><img src="qk logo.png" alt="QK Traders SACCO logo">QK TRADERS SACCO</a>
+        <nav aria-label="Main navigation"><ul class="nav-menu"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a class="active" href="services.html">Services ▾</a></li><li><a href="profile.html">Publications</a></li><li><a href="contact-us.html">Contact</a></li></ul></nav>
+        <a href="membership.html" class="btn-get-started">Get Started ↗</a>
+    </header>
+    <main>
+        <section class="page-hero">
+            <p>QK Traders SACCO services</p>
+            <h1>Money solutions for every next step.</h1>
+            <p class="intro">Discover practical ways to save, borrow, and manage your finances with a SACCO built to help members grow stronger together.</p>
+        </section>
+        <section class="services-section">
+            <div class="section-heading">
+                <p class="eyebrow">Explore our products</p>
+                <h2>Designed around <span>your financial goals.</span></h2>
+                <p>Whether you are building a habit, investing in your plans, or accessing funds for something important, our products are made for real life.</p>
+            </div>
+            <div class="service-grid">
+                <article id="savings" class="service-card">
+                    <div class="service-icon">🏦</div>
+                    <h2>Savings Accounts</h2>
+                    <p>Saving with QK Traders SACCO gives you a practical place to build financial security at your own pace. Whether you are planning for school fees, a business goal, an emergency fund, or a major purchase, a regular saving habit helps turn a future plan into something achievable.</p>
+                    <h3>Choose a savings option that fits your goal</h3>
+                    <ul class="feature-list">
+                        <li><strong>Regular savings</strong> help you set money aside consistently while keeping your financial goals in view.</li>
+                        <li><strong>Fixed deposits</strong> are suited to funds you are comfortable committing for an agreed period while you work towards a longer-term target.</li>
+                        <li><strong>Junior savings</strong> give families a simple way to introduce young people to the value of saving.</li>
+                        <li><strong>Group savings</strong> support VSLAs, community groups, and co-operatives that are growing together.</li>
+                    </ul>
+                    <p class="service-note">Our team can guide you through account opening, saving plans, statements, and the current terms that apply to your chosen account.</p>
+                    <div class="savings-visual" aria-hidden="true"><img src="qk.jpeg" alt=""><span class="visual-caption">Save with purpose<small>For every tomorrow</small></span></div>
+                </article>
+                <article id="loans" class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h2>Loan Products</h2>
+                    <p>When a meaningful opportunity or urgent need arises, the right credit can help you move forward without losing momentum. QK Traders SACCO offers loan options designed around the different reasons members borrow, with guidance to help you choose a repayment plan you can manage responsibly.</p>
+                    <h3>Credit for the moments that matter</h3>
+                    <ul class="feature-list">
+                        <li><strong>Personal loans</strong> can support planned household needs and important life goals.</li>
+                        <li><strong>Business loans</strong> help eligible members invest in stock, equipment, working capital, or growth.</li>
+                        <li><strong>Asset financing</strong> can help with eligible vehicles, machinery, and tools that support your work.</li>
+                        <li><strong>Emergency and education loans</strong> provide options when family needs or school costs need timely attention.</li>
+                    </ul>
+                    <p class="service-note">Before applying, our team will explain eligibility, required documents, repayment expectations, collateral requirements, and the terms for the product you select.</p>
+                    <div class="loan-visual" aria-hidden="true"><img src="foods.jpg" alt=""><span class="visual-caption">Grow with confidence<small>Made for your next move</small></span></div>
+                </article>
+                <article id="banking" class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h2>Digital Banking</h2>
+                    <p>Your SACCO should fit into your day. Our digital banking channels are designed to make it easier to stay informed about your money, access supported services, and keep track of your relationship with QK Traders SACCO without unnecessary trips.</p>
+                    <h3>Convenience with peace of mind</h3>
+                    <ul class="feature-list">
+                        <li><strong>Mobile banking</strong> gives eligible members access to supported transfers, balance checks, and loan enquiries.</li>
+                        <li><strong>USSD access</strong> makes selected services available from a phone, even when mobile data is not available.</li>
+                        <li><strong>Online account access</strong> can help you follow available savings and loan information in one place.</li>
+                        <li><strong>Alerts and statements</strong> keep you updated on account activity through supported channels.</li>
+                    </ul>
+                    <p class="service-note">Protect your account by using official QK SACCO channels only. Never share your PIN, password, or verification code with anyone.</p>
+                    <div class="banking-visual" aria-hidden="true"><img src="qk.jpeg" alt=""><span class="visual-caption">Bank on your time<small>Simple. Secure. Connected.</small></span></div>
+                </article>
+            </div>
+        </section>
+        <section class="info-band">
+            <div><h2>Ready to take the next step?</h2><p>Speak with our team to confirm current product terms, membership requirements, and the best option for your goals.</p></div>
+            <div class="info-actions"><a class="btn-light" href="contact-us.html">Contact us ↗</a><a href="membership.html">Become a member ↗</a></div>
+        </section>
+    </main>
+    <footer><div class="footer-content"><div class="footer-brand"><img src="qk logo.png" alt="">QK Traders SACCO</div><div class="footer-centre"><span class="footer-copy">Copyright © 2026 QK Traders Sacco. All rights reserved.</span></div><div class="footer-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="contact-us.html">Contact</a></div></div></footer>
+    <div class="chat-widget">
+        <div class="chat-options"><a href="https://wa.me/256702801507" class="chat-option"><span>📱</span>WhatsApp</a><a href="tel:+256702801507" class="chat-option"><span>📞</span>Call</a></div>
+        <button class="chat-toggle" type="button" aria-label="Open contact options">💬</button>
+    </div>
+    <script>document.querySelector('.chat-toggle').addEventListener('click', () => document.querySelector('.chat-widget').classList.toggle('expanded'));</script>
+</body>
+</html>
